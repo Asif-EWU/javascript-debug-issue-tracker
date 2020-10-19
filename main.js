@@ -21,13 +21,18 @@ function submitIssue(e) {
   e.preventDefault();
 }
 
+//// PROBLEM IS DESCRIBED AT THE BOTTOM OF THIS FILE
+//// PROBLEM IS DESCRIBED AT THE BOTTOM OF THIS FILE
+//// PROBLEM IS DESCRIBED AT THE BOTTOM OF THIS FILE
+//// PROBLEM IS DESCRIBED AT THE BOTTOM OF THIS FILE
+//// PROBLEM IS DESCRIBED AT THE BOTTOM OF THIS FILE
+//// PROBLEM IS DESCRIBED AT THE BOTTOM OF THIS FILE
+//// PROBLEM IS DESCRIBED AT THE BOTTOM OF THIS FILE
+
+
 const closeIssue = id => {
   const issues = JSON.parse(localStorage.getItem('issues'));
   const currentIssue = issues.find(issue => issue.id == id);
-
-  console.log(currentIssue);
-  console.log(issues);  /// THIS IS THE PROBLEM. HOW IS ISSUES STATUS GETTING UPDATED HERE??
-
   currentIssue.status = 'Closed';
   localStorage.setItem('issues', JSON.stringify(issues));
   fetchIssues();
@@ -62,3 +67,23 @@ const fetchIssues = () => {
 }
 
 
+/// Problem ta ashole localStorage e na. 
+/// problem ta hoitase array.find() e
+/// nicher code tar output dekhlei bujhte parben.
+/// but evabe keno kaj kore. system ta ki? net e paitasi na. 
+/// eitar details dewa ase emon kono article paile kindly share korben
+
+const x = {name: 'x', age: 1};
+const y = {name: 'y', age: 2};
+const z = [];
+z.push(x);
+z.push(y);
+
+const a = z.find(item => item.age === 2);
+console.log(z);
+console.log(a);
+
+a.name = 'y1';
+
+console.log(z);
+console.log(a);
