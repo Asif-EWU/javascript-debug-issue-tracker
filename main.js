@@ -24,6 +24,10 @@ function submitIssue(e) {
 const closeIssue = id => {
   const issues = JSON.parse(localStorage.getItem('issues'));
   const currentIssue = issues.find(issue => issue.id == id);
+
+  console.log(currentIssue);
+  console.log(issues);  /// THIS IS THE PROBLEM. HOW IS ISSUES STATUS GETTING UPDATED HERE??
+
   currentIssue.status = 'Closed';
   localStorage.setItem('issues', JSON.stringify(issues));
   fetchIssues();
